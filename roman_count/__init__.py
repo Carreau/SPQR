@@ -1,3 +1,10 @@
+"""
+docstring to make flit happy
+"""
+
+
+__version__ = '0.0.1'
+
 import copy 
 
 class RomanStack(object):
