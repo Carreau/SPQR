@@ -7,11 +7,13 @@ __version__ = '0.0.1'
 
 import copy 
 
-class RomanStack(object):
+class RomanNumeral(object):
     
     def __init__(self, val):
         if type(val) is list:
             self.stack = val
+        elif type(val) is str and  len(val) > 1:
+            self.stack = val.split()
         else:
             self.stack = [val]
         
@@ -22,7 +24,7 @@ class RomanStack(object):
         return self
         
     def __getattr__(self,val):
-        R =  RomanStack(val)
+        R =  RomanNumeral(val)
         return R._comb(self)
     
     def __repr__(self):
@@ -32,10 +34,10 @@ class RomanStack(object):
         return roman_to_int(''.join(self.stack))
     
     def __add__(self, other):
-        return RomanStack(int_to_roman(self._intval()+other._intval()).split())
+        return RomanNumeral(int_to_roman(self._intval()+other._intval()).split())
     
     def __sub__(self, other):
-        return RomanStack(int_to_roman(self._intval()-other._intval()).split())
+        return RomanNumeral(int_to_roman(self._intval()-other._intval()).split())
         
 
 def int_to_roman(input):
@@ -149,8 +151,8 @@ def roman_to_int(input):
         raise ValueError('input is not a valid roman numeral: %s' % input)
 
         
-V = RomanStack('V')
-I = RomanStack('I')
-X = RomanStack('X')
-C = RomanStack('C')
-M = RomanStack('M')
+V = RomanNumeral('V')
+I = RomanNumeral('I')
+X = RomanNumeral('X')
+C = RomanNumeral('C')
+M = RomanNumeral('M')
