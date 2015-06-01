@@ -2,11 +2,15 @@
 
 ## Roman empire backward compatibility 
 
-Still Partially Compatible with Roman empire allow you to deals with numeral
-that predate Fortran.  As you all know the necessity for quick iteration in
-scientific world as for long been a goal for all of us.  Now you can quickly
-achieve the efficiency you had to engrave number on you marble tablet
-calculator from the comfort of your QWERTY keyboard. 
+*S*till *P*artially *Q*uompatible with *R*oman empire allow you to deals with
+numeral use a long time agom in the BF times (BF as Before Fortran).  As you
+all know the necessity for quick iteration in as for long been a goal in
+scientific community, as well a reproducibility and backward compatibility.
+Now you can quickly achieve the efficiency you had to engrave number on you
+marble tablet calculator from the comfort of your QWERTY keyboard, and replicate studies made at the time of Neron, Ceasar. 
+
+
+> Tu quoque mi fili
 
 
 ```
@@ -28,6 +32,3 @@ In[5]: from SPQR.literals import *
 
 
 ### logo
-
-Logo is from wikimedia commons. 
-
