@@ -25,3 +25,9 @@ Or import the unicode 1-12,50
 ```
 In[5]: from SPQR.literals import *
 ```
+
+
+### logo
+
+Logo is from wikimedia commons. 
+
