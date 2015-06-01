@@ -1,5 +1,12 @@
 """
-docstring to make flit happy
+S.P.Q.R
+
+Senātus Populusque Rōmānus
+^       ^      ^   ^
+
+The Senate and People of Rome
+
+Just a Library to allow you be backward compatible with old numeral systems.
 """
 
 
