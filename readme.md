@@ -2,7 +2,7 @@
 
 ## Roman empire backward compatibility 
 
-*S*till *P*artially *Q*uompatible with *R*oman empire allow you to deals with
+**S**till **P**artially **Q**uompatible with **R**oman empire allow you to deals with
 numeral use a long time agom in the BF times (BF as Before Fortran).  As you
 all know the necessity for quick iteration in as for long been a goal in
 scientific community, as well a reproducibility and backward compatibility.
