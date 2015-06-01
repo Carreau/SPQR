@@ -1,5 +1,5 @@
 ```
-In [1]: from roman_count import I,V,C,M
+In [1]: from SPQR import I,V,C,M
 
 In [2]: I.V + C
 Out[2]: CIV
@@ -14,5 +14,5 @@ Out[4]: CMXCIX
 Or import the unicode 1-12,50
 
 ```
-In[5]: from roman_count.literals import *
+In[5]: from SPQR.literals import *
 ```
