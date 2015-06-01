@@ -33,3 +33,5 @@ In[5]: from SPQR.literals import *
 
 
 ### logo
+
+Logo of from wikimedia commons
