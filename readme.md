@@ -34,7 +34,7 @@ You can import the unicode caracters 1-12,50
 In[5]: from SPQR.literals import *
 ```
 
-And it of course play nice with the gods. In [**Jupyter**](//jupyter.org) you can tab-completes the above caracters with:
+And it of course play nice with the gods. In [**Jupyter**](//jupyter.org) you can tab-completes the above characters with:
 
 ```
 \roman numeral [one|two|three|...]<tab>

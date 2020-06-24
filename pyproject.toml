@@ -1,0 +1,15 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "SPQR"
+author = "Matthias Bussonnier"
+author-email = "bussonniermatthias@gmail.com"
+home-page = "https://github.com/Carreau/SPQR"
+classifiers = ["License :: OSI Approved :: MIT License"]
+description-file = "readme.md"
+requires-python = ">3"
+
+[tool.flit.metadata.urls]
+Source = "https://github.com/Carreau/SPQR"

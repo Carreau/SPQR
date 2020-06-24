@@ -10,42 +10,45 @@ Just a Library to allow you be backward compatible with old numeral systems.
 """
 
 
-__version__ = '0.0.4'
+__version__ = "0.0.5"
 
-import copy 
+import copy
 
-class RomanNumeral(object):
-    
+
+class RomanNumeral:
     def __init__(self, val):
         if type(val) is list:
             self.stack = val
-        elif type(val) is str and  len(val) > 1:
+        elif type(val) is str and len(val) > 1:
             self.stack = val.split()
         else:
             self.stack = [val]
-        
+
     def _comb(self, other):
         t_stack = copy.copy(other.stack)
         t_stack.extend(self.stack)
         self.stack = t_stack
         return self
-        
-    def __getattr__(self,val):
-        R =  RomanNumeral(val)
+
+    def __getattr__(self, val):
+        R = RomanNumeral(val)
         return R._comb(self)
-    
+
     def __repr__(self):
         return int_to_roman(self._intval())
-    
+
     def _intval(self):
-        return roman_to_int(''.join(self.stack))
-    
+        return roman_to_int("".join(self.stack))
+
+    def __mul__(self, other):
+        return RomanNumeral(int_to_roman(self._intval() / other._intval()).split())
+
     def __add__(self, other):
-        return RomanNumeral(int_to_roman(self._intval()+other._intval()).split())
-    
+        return RomanNumeral(int_to_roman(self._intval() + other._intval()).split())
+
     def __sub__(self, other):
-        return RomanNumeral(int_to_roman(self._intval()-other._intval()).split())
-        
+        return RomanNumeral(int_to_roman(self._intval() - other._intval()).split())
+
 
 def int_to_roman(input):
     """
@@ -91,15 +94,14 @@ def int_to_roman(input):
     >>> print int_to_roman(1999)
     MCMXCIX
     """
-    ints = (1000, 900,  500, 400, 100,  90, 50,  40, 10,  9,   5,  4,   1)
-    nums = ('M',  'CM', 'D', 'CD','C', 'XC','L','XL','X','IX','V','IV','I')
+    ints = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+    nums = ("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
     result = ""
     for i in range(len(ints)):
         count = int(input / ints[i])
         result += nums[i] * count
         input -= ints[i] * count
     return result
-
 
 
 def roman_to_int(input):
@@ -131,8 +133,8 @@ def roman_to_int(input):
     """
 
     input = input.upper()
-    nums = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
-    ints = [1000, 500, 100, 50,  10,  5,   1]
+    nums = ["M", "D", "C", "L", "X", "V", "I"]
+    ints = [1000, 500, 100, 50, 10, 5, 1]
     places = []
     for c in input:
         if not c in nums:
@@ -142,7 +144,7 @@ def roman_to_int(input):
         value = ints[nums.index(c)]
         # If the next place holds a larger number, this value is negative.
         try:
-            nextvalue = ints[nums.index(input[i +1])]
+            nextvalue = ints[nums.index(input[i + 1])]
             if nextvalue > value:
                 value *= -1
         except IndexError:
@@ -150,16 +152,17 @@ def roman_to_int(input):
             pass
         places.append(value)
     sum = 0
-    for n in places: sum += n
+    for n in places:
+        sum += n
     # Easiest test for validity...
     if int_to_roman(sum) == input:
         return sum
     else:
-        raise ValueError('input is not a valid roman numeral: %s' % input)
+        raise ValueError("input is not a valid roman numeral: %s" % input)
 
-        
-V = RomanNumeral('V')
-I = RomanNumeral('I')
-X = RomanNumeral('X')
-C = RomanNumeral('C')
-M = RomanNumeral('M')
+
+V = RomanNumeral("V")
+I = RomanNumeral("I")
+X = RomanNumeral("X")
+C = RomanNumeral("C")
+M = RomanNumeral("M")
