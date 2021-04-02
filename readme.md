@@ -40,6 +40,10 @@ And it of course play nice with the gods. In [**Jupyter**](//jupyter.org) you ca
 \roman numeral [one|two|three|...]<tab>
 ```
 
+It is also usable inside NumPy arrays and other data structures:
+
+![example of adding two numpy arrays with SPQR data](numpy-example.png)
+
 ### Packaging
 
 Proudly packaged with [flit](https://github.com/takluyver/flit)
