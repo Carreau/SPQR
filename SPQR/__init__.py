@@ -10,7 +10,7 @@ Just a Library to allow you be backward compatible with old numeral systems.
 """
 
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 import copy
 
