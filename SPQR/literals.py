@@ -13,3 +13,4 @@ from . import RomanNumeral
 Ⅺ = RomanNumeral("XI")
 Ⅻ = RomanNumeral("XII")
 Ⅼ = RomanNumeral("L")
+Ⅿ = RomanNumeral("M")

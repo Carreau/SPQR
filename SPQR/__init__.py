@@ -41,7 +41,7 @@ class RomanNumeral:
         return roman_to_int("".join(self.stack))
 
     def __mul__(self, other):
-        return RomanNumeral(int_to_roman(self._intval() / other._intval()).split())
+        return RomanNumeral(int_to_roman(self._intval() * other._intval()).split())
 
     def __add__(self, other):
         return RomanNumeral(int_to_roman(self._intval() + other._intval()).split())
@@ -53,20 +53,20 @@ class RomanNumeral:
 def int_to_roman(input):
     """
     Convert an integer to Roman numerals.
- 
+
     Examples:
     >>> int_to_roman(0)
     Traceback (most recent call last):
     ValueError: Argument must be between 1 and 3999
- 
+
     >>> int_to_roman(-1)
     Traceback (most recent call last):
     ValueError: Argument must be between 1 and 3999
- 
+
     >>> int_to_roman(1.5)
     Traceback (most recent call last):
     TypeError: expected integer, got <type 'float'>
- 
+
     >>> for i in range(1, 21): print int_to_roman(i)
     ...
     I
@@ -107,13 +107,13 @@ def int_to_roman(input):
 def roman_to_int(input):
     """
     Convert a roman numeral to an integer.
-    
+
     >>> r = range(1, 4000)
     >>> nums = [int_to_roman(i) for i in r]
     >>> ints = [roman_to_int(n) for n in nums]
     >>> print r == ints
     1
- 
+
     >>> roman_to_int('VVVIV')
     Traceback (most recent call last):
      ...
