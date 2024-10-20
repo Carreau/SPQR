@@ -26,9 +26,17 @@ In [4]: NOW - AGE
 Out[4]: MCMLXXXVI
 ```
 
+## numpy display format
+
+
+```python
+from SPQR import set_numpy_print_options
+set_numpy_print_options()
+```
+
 ## Praise the gods. 
 
-You can import the unicode caracters 1-12,50
+You can import the unicode caracters 1-12,50 and a few others:
 
 ```python
 In[5]: from SPQR.literals import *
@@ -46,9 +54,9 @@ It is also usable inside NumPy arrays and other data structures:
 
 ### Packaging
 
-Proudly packaged with [flit](https://github.com/takluyver/flit)
+Proudly packaged with [flit](https://github.com/pypa/flit)
 
 
 ### logo
 
-Logo of from wikimedia commons
+Logo from wikimedia commons

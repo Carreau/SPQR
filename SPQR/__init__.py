@@ -10,7 +10,7 @@ Just a Library to allow you be backward compatible with old numeral systems.
 """
 
 
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 
 import copy
 
@@ -166,3 +166,18 @@ I = RomanNumeral("I")
 X = RomanNumeral("X")
 C = RomanNumeral("C")
 M = RomanNumeral("M")
+
+
+def numpy_format(number):
+    if number == 0:
+        return "0"
+    if number < 0:
+        return "-" + int_to_roman(-number)
+    else:
+        return int_to_roman(number)
+
+
+def set_numpy_print_options():
+    import numpy as np
+
+    np.set_printoptions(formatter={"int": numpy_format})
